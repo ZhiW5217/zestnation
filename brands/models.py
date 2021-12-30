@@ -41,9 +41,10 @@ class BrandsModels(models.Model):
 class ProductModels(models.Model):
     product_name = models.CharField(max_length=255, verbose_name="产品名称")
     product_type = models.CharField(max_length=50, verbose_name="产品型号", null=True, blank=True)
-    status = models.BooleanField(default=False, choices=status_choices('草稿', '发布'), verbose_name="页面状态")
+    status = models.BooleanField(default=False, choices=status_choices('草稿', '发布'), verbose_name="页面状态", null=True,
+                                 blank=True)
     product_typesetting = models.BooleanField(default=False, choices=status_choices('集合页面排版', '独立页面排版'),
-                                              verbose_name="页面排版")
+                                              verbose_name="页面排版", null=True, blank=True)
     product_top = models.BooleanField(default=False, choices=status_choices('非置顶', '置顶'), verbose_name="排版置顶",
                                       blank=True, null=True)
     brand = models.ForeignKey(to=BrandsModels, on_delete=models.CASCADE, blank=True, null=True, related_name='product',

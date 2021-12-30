@@ -1,9 +1,9 @@
-### 沁泽通道公司官网
-
+### 沁泽通达公司官网
 
 ### 安装
 `pip install requirements.txt`
 
 
 ### 启动
-`python -c gunicorn.conf.py zestnation.wsgi:applic`
+
+`gunicorn -c gunicorn.conf.py zestnation.wsgi:application`

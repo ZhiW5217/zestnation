@@ -1,4 +1,3 @@
-from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
@@ -20,7 +19,7 @@ from tools.storage import ImageStorage
 
 
 class NewsTypeModels(models.Model):
-    type_name = models.CharField(max_length=255, verbose_name="新闻类型")
+    type_name = models.CharField(max_length=255, verbose_name="新闻类型", null=True, blank=True)
 
     def __str__(self):
         return self.type_name
@@ -38,11 +37,12 @@ class NewsModels(models.Model):
     article_info = models.TextField(verbose_name='文章简介', blank=True, null=True)
     article_type = models.ForeignKey(to=NewsTypeModels, on_delete=models.CASCADE, blank=True, null=True,
                                      related_name='new', verbose_name="类型")
-    article_author = models.CharField(max_length=50, verbose_name="创建人")
-    status = models.BooleanField(default=False, choices=status_choices('草稿', '发布'), verbose_name="文章状态")
-    show = models.BooleanField(default=False, choices=status_choices(), verbose_name="首页展示")
+    article_author = models.CharField(max_length=50, verbose_name="创建人", null=True, blank=True)
+    status = models.BooleanField(default=False, choices=status_choices('草稿', '发布'), verbose_name="文章状态", null=True,
+                                 blank=True)
+    show = models.BooleanField(default=False, choices=status_choices(), verbose_name="首页展示", null=True, blank=True)
     show_time = models.DateField(blank=True, null=True, auto_now=False, verbose_name="展示时间")
-    article_desc = RichTextUploadingField(verbose_name="文章内容")
+    article_desc = RichTextUploadingField(verbose_name="文章内容", null=True, blank=True)
     create_time = models.DateTimeField(auto_now_add=True, blank=True, null=True, verbose_name='创建时间')
     update_time = models.DateTimeField(auto_now=True, verbose_name='最后修改时间', blank=True, null=True)
 
