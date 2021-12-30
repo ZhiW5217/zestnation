@@ -1,0 +1,57 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+{% block main %}
+    {% block content %}
+        <div class="cpdt-wrap" style="background-image:url({% static 'images/cpdt_bg.jpg' %})">
+            <div id="home111" class="cpdt-con wid">
+                <h1 class="cpdt-hd"><span>{{ new_type.first.article_type.type_name }}</span></h1>
+                <ul class="cpdt-list">
+                    {% for new in type_news %}
+                        <li class="wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                            <a href="/news/art/{{ new.pk }}">
+                                <div class="img"><img alt="" src="/media/{{ new.article_img }}"></div>
+                                <div class="con">
+                                    <h1 class="tit">{{ new.article_title }}</h1>
+                                    <div class="txt">{{ new.article_info }}</div>
+                                </div>
+                                <div class="time-box">
+                                    <div class="day">{{ new.show_time|date:"d" }}</div>
+                                    <div class="date">{{ new.show_time|date:"Y.F" }}</div>
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+                <div class="paging">
+                    <ul class="pager">
+                        <li><a href="javascript:;" class="huise"><i class="iconfont icon-iconfontzuojiantou"></i></a>
+                        </li>
+                        <li><a href="javascript:;" class="active">1</a></li>
+                        <li><a href="javascript:;" class="huise"><i class="iconfont icon-iconfontyoujiantou"></i></a>
+                        </li>
+                    </ul>
+                    <div class="total">
+                        共1/1页
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    {% include 'footer.html' %}
+{% endblock %}
+{% block script %}
+    <script type="application/javascript">
+        let el = $("#clicks li")
+        el.eq(0).removeClass("active")
+        el.eq(1).removeClass("active")
+        el.eq(2).removeClass("active")
+        el.eq(3).addClass("active")
+        el.eq(4).removeClass("active")
+    </script>
+{% endblock %}
+

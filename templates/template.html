@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>沁泽通达</title>
+    <meta content="沁泽" name="keywords"/>
+    <meta content="沁泽" name="description"/>
+    <title>{% block title %}
+
+    {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <style>
+
+
+
+
+    </style>
+    <script>
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                // alert(decodeURIComponent(r[2]))
+                return decodeURIComponent(r[2]);
+            }
+            return null;
+        }
+
+        var yema = 0;
+        var m11 = parseInt(getUrlParam('m'));
+        if (!isNaN(m11)) {
+            yema = m11 - 1;
+            console.log(yema)
+        }
+    </script>
+    {% block link-style %}
+
+    {% endblock %}
+</head>
+<body class="cn-body show">
+<!-- 导航栏 -->
+<header class="header pg-header scroll-header">
+    <div class="header-con wid">
+        <a class="logo" href="/index">
+            <img src="{% static 'images/1920/logo.png' %}">
+        </a>
+        <div class="header-rt">
+            <div class="m-box">
+                <div class="nav-box">
+                    <nav class="nav">
+                        <ul id="clicks">
+                            <li>
+                                <a href="/index">首页</a>
+                            </li>
+                            <li>
+                                <a href="/brand/{{ brand_types.first.pk }}">旗下品牌</a>
+                                <i class="arr iconfont icon-icon1"></i>
+                                <div class="navMenu">
+                                    {% for brand in brand_types %}
+                                        <a href="/brand/{{ brand.pk }}">{{ brand.brand_name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/about">公司介绍</a>
+
+                            </li>
+                            <li>
+                                <a href="/news/{{ new_types.first.pk }}">新闻中心</a>
+                                {% if new_types|length > 1 %}
+                                    <i class="arr iconfont icon-icon1"></i>
+                                    <div class="navMenu">
+                                        {% for new_type in new_types %}
+                                            <a href="/news/{{ new_type.pk }}">{{ new_type.type_name }}</a>
+                                        {% endfor %}
+
+                                    </div>
+                                {% endif %}
+
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://jobs.51job.com/all/co4149597.html">加入我们</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menuBtn">
+        <b></b>
+        <b></b>
+        <b></b>
+    </div>
+
+</header>
+
+
+<div class="video-popup">
+    <div class="close-btn">+</div>
+    <video src="" preload="" controls="" id="video" autoplay="" playsinline="" webkit-playsinline=""
+           x5-video-player-type="h5-page"></video>
+    <div id="extwaiokist" style="display:none" v="fcoon" q="9d55445d" c="154.9" i="263" u="43.54" s="11302117"
+         d="1" w="false" e="" m="BMe=" vn="3gtra">
+        <div id="extwaigglbit" style="display:none" v="fcoon" q="9d55445d" c="154.9" i="263" u="43.54"
+             s="11302117" d="1" w="false" e="" m="BMe="></div>
+    </div>
+</div>
+
+{% block main %}
+    {% block content %}
+
+    {% endblock %}
+{% endblock %}
+
+<script src="{% static 'js/swiper.animate.min.js' %}"></script>
+<script src="{% static 'js/swiper.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/jquery.countup.min.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/common.js' %}"></script>
+
+
+<script>
+    // var ckk=getCookie('cook');
+    // // alert(  document.cookie)
+    // if(ckk!=1){
+    //     if($('#fullscreenvideo').attr('src')==''){
+    //         $('.open-video').remove();
+    //     }
+    //     setCookie('cook',1);
+    // }else{
+    //     $('.open-video').remove();
+    // }
+    //设置cookie
+    function setCookie(cname, cvalue, exdays) {
+        // var d = new Date();
+        // d.setTime(d.getTime()+(exdays*24*60*60*1000));
+        // var expires = "expires="+d.toGMTString();
+        expires = '';
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+
+    //读取 cookie
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+
+    if ($(".header nav ul li").eq(0).addClass("active"), 768 < $(window).width()) {
+        var elevideo = document.getElementById("fullscreenvideo");
+        console.log(elevideo)
+        console.log($('#fullscreenvideo').attr('src'))
+        if (elevideo != null && $('#fullscreenvideo').attr('src') !== '') {
+            elevideo.play();
+            elevideo.addEventListener("ended", function () {
+                $(".open-video").fadeOut(300)
+            }, !1);
+        }
+
+    }
+
+    function fontSize() {
+        var deviceWidth = document.documentElement.clientWidth > 760 ? 760 : document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = (deviceWidth / 76) + "px";
+    }
+
+    fontSize();
+    window.onresize = fontSize;
+</script>
+{% block script %}
+
+{% endblock %}
+</body>
+</html>

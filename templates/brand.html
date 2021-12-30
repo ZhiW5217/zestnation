@@ -1,0 +1,249 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block title %}
+
+{% endblock %}
+
+
+{% block link-style %}
+
+{% endblock %}
+{% block main %}
+    <div class="swiper-container fullpage swiper-container-initialized swiper-container-vertical">
+        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+            {% block content %}
+                <script src="{% static 'js/swiper.min.js' %}"></script>
+
+
+                {#首屏背景#}
+                <div class="swiper-slide swiper-slide-prev">
+                    <div class="banner in-common-banner">
+                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide-active" style="width: 1920px;">
+                                    <a href="javascript:;" style="cursor:default">
+                                        <div style="background-image:url('/media/{{ brand.brand_images }}')"
+                                             class="banner-item">
+                                            <div class="comm-bg pc-bg"
+                                                 style="background-image:url('/media/{{ brand.brand_images }}')">
+                                            </div>
+                                            <div class="comm-bg mb-bg"
+                                                 style="background-image:url('/media/{{ brand.brand_images_m }}')">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+                {# 下方页面 #}
+                {% for product in products_up %}
+                    <div class="swiper-slide">
+                        <a href="{{ product.product_url }}"
+                           target="_blank">
+                            <div class="container">
+                                <header class="common-brand-titles common-brand-titles-line wid brand_title-left">
+                                    <div class="ani" swiper-animate-style-cache=" " style="visibility: hidden;">
+                                        <h1></h1>
+                                        <h1></h1>
+                                        <p class="ani" swiper-animate-style-cache=" " style="visibility: hidden;"></p>
+                                    </div>
+                                </header>
+                                <div class="comm-bg pc-bg"
+                                     style="background-image:url('/media/{{ product.product_background_image }}')">
+                                </div>
+                                <div class="comm-bg mb-bg"
+                                     style="background-image:url('/media/{{ product.product_background_image_m }}')">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+
+
+
+                {# 集合页面 #}
+                {% if products %}
+                    <div class="swiper-slide swiper-slide-next">
+                        <div class="container">
+                            <div class="zzyy-wrap">
+                                <div class="swiper-container common-gallery-top gallery-top_car3 swiper-container-initialized swiper-container-horizontal">
+                                    <div class="swiper-wrapper">
+                                        {% for product in products %}
+                                            <div class="swiper-slide {% if forloop.counter0 == 0 %}
+                            swiper-slide-active
+                            {% elif forloop.counter0 == 1 %}
+                            swiper-slide-next
+                            {% endif %} " style="width: 1920px;">
+                                                <a href="{{ product.product_url }}"
+                                                   target="_blank">
+                                                    <div class="comm-bg pc-bg"
+                                                         style="background-image:url('/media/{{ product.product_background_image }}')">
+                                                    </div>
+                                                    <div class="comm-bg mb-bg"
+                                                         style="background-image:url('/media/{{ product.product_background_image_m }}')">
+                                                    </div>
+                                                    <header
+                                                            class="common-brand-titles common-brand-titles-line wid brand_title-left">
+                                                        <div class="ani" swiper-animate-style-cache=" "
+                                                             style="visibility: hidden;">
+                                                            <h1></h1>
+                                                            <h1></h1>
+                                                            <p class="ani" swiper-animate-style-cache=" "
+                                                               style="visibility: hidden;"></p>
+                                                        </div>
+                                                    </header>
+                                                </a>
+                                            </div>
+                                        {% endfor %}
+
+                                    </div>
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                                </div>
+                                <div class="common-gallery-thumbs-box wid ani" swiper-animate-duration="0.5s"
+                                     swiper-animate-effect="fadeIn" swiper-animate-style-cache=" "
+                                     style="visibility: hidden;">
+                                    <div class="swiper-container common-gallery-thumbs gallery-thumbs_car3 swiper-container-initialized swiper-container-horizontal swiper-container-free-mode">
+                                        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+
+
+                                            {% for product in products %}
+                                                <div class="swiper-slide swiper-slide-visible {% if forloop.counter0 == 0 %}
+                                    swiper-slide-thumbs-active swiper-slide-active
+                                   {% elif forloop.counter0 == 1 %}
+                                    swiper-slide-next
+                                 {% endif %} "
+                                                     style="width: 307.5px; margin-right: 70px;">
+                                                    <img alt="{{ product.product_name }}"
+                                                         src="/media/{{ product.product_first_image }}">
+                                                    <div class="info">
+                                                        <p class="pro-name">{{ product.product_name }}</p>
+                                                        <p class="pro-txt">{{ product.product_type }}</p>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <span class="swiper-notification" aria-live="assertive"
+                                              aria-atomic="true"></span>
+                                    </div>
+                                    {# 翻页 #}
+                                    <div class="swiper-btn swiper-button-next" tabindex="0" role="button"
+                                         aria-label="Next slide" aria-disabled="false"><i
+                                            class="iconfont icon-iconfontyoujiantou"></i>
+                                    </div>
+                                    <div class="swiper-btn swiper-button-prev swiper-button-disabled" tabindex="0"
+                                         role="button" aria-label="Previous slide" aria-disabled="true"
+                                    ><i class="iconfont icon-iconfontzuojiantou"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {# 下方页面 #}
+                {% for product in products_down %}
+                    <div class="swiper-slide">
+                        <a href="{{ product.product_url }}"
+                           target="_blank">
+                            <div class="container">
+                                <header class="common-brand-titles common-brand-titles-line wid brand_title-left">
+                                    <div class="ani" swiper-animate-style-cache=" " style="visibility: hidden;">
+                                        <h1></h1>
+                                        <h1></h1>
+                                        <p class="ani" swiper-animate-style-cache=" " style="visibility: hidden;"></p>
+                                    </div>
+                                </header>
+                                <div class="comm-bg pc-bg"
+                                     style="background-image:url('/media/{{ product.product_background_image }}')">
+                                </div>
+                                <div class="comm-bg mb-bg"
+                                     style="background-image:url('/media/{{ product.product_background_image_m }}')">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+
+            {% endblock %}
+            {% include 'footer.html' %}
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script>
+
+
+        function car3() {
+            var e = new Swiper(".gallery-thumbs_car3", {
+                slidesPerView: 4,
+                spaceBetween: 70,
+                freeMode: true,
+                loop: false,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: ".common-gallery-thumbs-box .swiper-button-next",
+                    prevEl: ".common-gallery-thumbs-box .swiper-button-prev"
+                },
+                breakpoints: {
+                    768: {
+                        spaceBetween: 3,
+                        slidesPerView: 4
+                    },
+                    1024: {
+                        spaceBetween: 30,
+                        slidesPerView: 3
+                    },
+                    1440: {
+                        spaceBetween: 30,
+                        slidesPerView: 4
+                    }
+                }
+            });
+            var b = new Swiper(".gallery-top_car3", {
+                slidesPerView: 1,
+                speed: 1e3,
+                //thumbs: {swiper: e},
+                navigation: {
+                    nextEl: ".common-gallery-thumbs-box .swiper-button-next",
+                    prevEl: ".common-gallery-thumbs-box .swiper-button-prev"
+                },
+                on: {
+                    slideChangeTransitionStart: function () {
+                        var idx = this.activeIndex;
+                        $(".gallery-thumbs_car3 .swiper-slide").eq(idx).addClass("swiper-slide-thumbs-active")
+                            .siblings().removeClass("swiper-slide-thumbs-active")
+                    }
+                }
+            })
+
+            $(".gallery-thumbs_car3 .swiper-slide").eq(0).addClass("swiper-slide-thumbs-active")
+            $(".gallery-thumbs_car3 .swiper-slide").click(function () {
+                $(this).addClass("swiper-slide-thumbs-active").siblings().removeClass(
+                    "swiper-slide-thumbs-active");
+                var index = $(this).index()
+                b.slideTo(index, 1000, false);
+            })
+            $(".gallery-thumbs_car3 .swiper-slide").length < 5 && $(".gallery-thumbs_car3").parents(
+                ".common-gallery-thumbs-box").find(".swiper-btn").hide()
+
+
+        }
+
+        car3()
+        let el = $("#clicks li")
+        el.eq(0).removeClass("active")
+        el.eq(1).addClass("active")
+        el.eq(2).removeClass("active")
+        el.eq(3).removeClass("active")
+        el.eq(4).removeClass("active")
+    </script>
+{% endblock %}

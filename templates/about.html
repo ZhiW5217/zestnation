@@ -1,0 +1,254 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block title %}
+
+{% endblock %}
+{% block link-style %}
+    <style>
+        .txt-item-con {
+            line-height: 1.91667vw;
+        }
+
+        .txt-cc {
+            margin-top: 1.6vw;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+    <div class="swiper-container fullpage swiper-container-initialized swiper-container-vertical">
+        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+            {% block content %}
+                <script src="{% static 'js/swiper.min.js' %}"></script>
+                <div class="swiper-slide swiper-slide-active">
+                    <div class="container about-video-container">
+                        <div id="pc-bg111" class="comm-bg pc-bg"
+                             style="background-image:url('{% static "images/1920/jj_1920_1.jpg" %}')">
+                        </div>
+                        <div id="mb-bg111" class="comm-bg mb-bg"
+                             style="background-image:url('{% static "images/750/jj_750_1.jpg" %}');">
+                        </div>
+                        {#                        <div class="comm-video">#}
+                        {#                            <video src="/uploadfile/2021/0827/20210827405737.mov" onpause="xianshi22222222()"#}
+                        {#                                   poster="../static/images/1920/jj_1920_1.jpg"#}
+                        {#                                   id="about-video"></video>#}
+                        {#                        </div>#}
+                        <div class="begl-wrap wid" style="z-index: 3">
+                            <div id="fengmian111" class="common-titles about-common-titles ani  fadeInLeft animated"
+                                 swiper-animate-duration="0.5s" swiper-animate-effect="fadeInLeft"
+                                 style="visibility: visible;animation-duration:0.5s;-webkit-animation-duration:0.5s;">
+                                <h1 class="tit" style="color: #ffffff">
+                                    GLOBAL USER TRUST <br> FAMOUS BRAND </h1>
+                                <h4 class="ab-sub-tit" style="color: #ffffff">
+                                    赋能中国 “智”造 <br>
+                                    打造一组值得全球用户信赖的知名品牌</h4>
+                                {#                                <div class="ab-play-btn">#}
+                                {#                                    <i class="iconfont icon-bofang1"></i> PUBLICITY VIDEO#}
+                                {#                                </div>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-next">
+                    <div class="container">
+                        <div class="comm-bg pc-bg"
+                             style="background-image:url({% static 'images/1920/jj_2.jpg' %}"></div>
+                        <div class="comm-bg mb-bg"
+                             style="background-image:url({% static 'images/1920/jj_2.jpg' %})"></div>
+                        <div class="gsjj-wrap">
+                            <div class="gs-img">
+                                <img alt="" src="{% static 'images/1920/jj_1920_2.jpg' %}">
+                            </div>
+                            <div class="gs-con ani" swiper-animate-duration="0.5s" swiper-animate-effect="fadeInRight"
+                                 style="visibility: hidden;">
+                                <header class="gs-hd">
+                                    <h1 class="en">COMPANY PROFILE</h1>
+                                    <h1 class="cn">公司简介</h1>
+                                </header>
+                                <article class="gs-txt" style="white-space: pre-line">
+                                    沁泽（深圳市沁泽通达科技有限公司）成立于2016年，是一家“互联网+技术”品牌型产品公司，通过对欧美日等发达地区以及东南亚地区的消费需求分析，借助互联网营销手段，依托数据分析、市场预判、产品研发以及高效的供应链管理能力，主力打造精品模式，向线上个人消费者提供wow的产品。
+                                    公司总部位于深圳，美国、日本、兰州设有分公司，更快更精准的掌握前端市场需求和行业资讯，深圳总部200余人，是一个高效、创新、充满活力和凝聚力的团队。
+                                    公司致力于持续为全球用户提供创新型优质的产品，在产品研发、品牌建设、供应链管理精益求精，为赋能中国“智”造，打造一组值得全球用户信赖的知名品牌。
+                                </article>
+                                <ul class="gs-list">
+                                    <li>
+                                        <div class="num-box">
+                                            <span class="num">2000</span>
+                                            <span class="unit">+</span>
+                                        </div>
+                                        <div class="tit">
+                                            办公面积
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="num-box">
+                                            <span class="num">300</span>
+                                            <span class="unit">+</span>
+                                        </div>
+                                        <div class="tit">
+                                            办公人员
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="num-box">
+                                            <span class="num">300</span>
+                                            <span class="unit">+</span>
+                                        </div>
+                                        <div class="tit">
+                                            研发项目
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="comm-bg pc-bg"
+                             style="background-image:url({% static 'images/1920/jj_1920_3_bg.jpg' %})">
+                        </div>
+                        <div class="comm-bg mb-bg"
+                             style="background-image:url({% static 'images/1920/jj_1920_3_bg.jpg' %})">
+                        </div>
+                        <div class="znsh-wrap wid" style="padding-top:120px;">
+                            <header class="brand-titles">
+                                <div class="lt ani" swiper-animate-duration="0.5s" swiper-animate-effect="fadeInLeft">
+                                    <h5 class="sub-tit">
+                                        BRAND DEVELOPMENT HISTORY
+                                    </h5>
+                                    <h2 class="sub-tit">品牌发展历程</h2>
+                                    <h4 class="small-tit brand1">2020年自主研发品牌“RAYCUE”被AMAZON纳入为重点关注品牌。</h4>
+                                    <h4 class="small-tit brand2">同年RAYCUE品牌旗下产品销量突破50万个。</h4>
+                                </div>
+                                <div style="font-size:17vw;" class="cur-year cur-year2 ani"
+                                     swiper-animate-duration="0.5s" swiper-animate-effect="fadeInRight">
+                                </div>
+                            </header>
+                            <div class="swiper-container znsh-swiper p2_3d p2_3d2 ani" swiper-animate-duration="0.5s"
+                                 swiper-animate-effect="fadeIn">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img alt="2019年" src="{% static 'images/1920/jj_1920_2019.png' %}">
+                                        <div class="info">
+                                            <p class="time">2019</p>
+                                            <p class="txt" style="white-space: pre-line">假装有文案</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img alt="2020年" src="{% static 'images/1920/jj_1920_2020_1.png' %}">
+                                        <div class="info">
+                                            <p class="time">2020</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img alt="2016年" src="{% static 'images/1920/jj_1920_2016.png' %}">
+                                        <div class="info">
+                                            <p class="time">2016</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img alt="2017年" src="{% static 'images/1920/jj_1920_2017.png' %}">
+                                        <div class="info">
+                                            <p class="time">2017</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function znsh2() {
+                        new Swiper(".p2_3d2", {
+                            effect: "coverflow",
+                            slidesPerView: "auto",
+                            centeredSlides: true,
+                            loop: true,
+                            coverflowEffect: {
+                                rotate: 40,
+                                stretch: 0,
+                                depth: 120,
+                                modifier: 1,
+                                slideShadows: true
+                            },
+                            on: {
+                                transitionEnd: function () {
+                                    var e = this.slides.eq(this.activeIndex).text().substring(0, 4);
+                                    if (e === '2020') {
+                                        $('.brand1').text('2020测试文案')
+                                        $('.brand2').text('2020测试文案')
+                                    }else if (e === '2019') {
+                                        $('.brand1').text('2019测试文案')
+                                        $('.brand2').text('2019测试文案')
+                                    }else if (e === '2017') {
+                                        $('.brand1').text('2017测试文案')
+                                        $('.brand2').text('2017测试文案')
+                                    }else if (e === '2016') {
+                                        $('.brand1').text('2016测试文案')
+                                        $('.brand2').text('2016测试文案')
+                                    }
+                                    $(".cur-year2").text(e)
+                                }
+                            }
+                        })
+                    }
+
+                    znsh2()
+                </script>
+
+
+
+
+
+
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="comm-bg pc-bg"
+                             style="background-image:url({% static 'images/1920/jj_1920_4.jpg' %})"></div>
+                        <div class="comm-bg mb-bg"
+                             style="background-image:url({% static 'images/750/jj_750_4.jpg' %})">
+                        </div>
+                        <div class="wmyj-wrap wid">
+                            <div class="wmyj-con ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s"
+                                 style="visibility: hidden;">
+                                <div class="wmyj-title">
+                                    <div class="tit-item">
+                                        <h1 class="tit">CORPORATE MISSION</h1>
+                                    </div>
+
+                                </div>
+                                <div class="txt">
+                                    <div class="txt-item txt-cc">
+                                        我们的使命:
+                                        <div class="txt-item-con">持续为全球用户提供“WOW”的产品和服务。</div>
+                                    </div>
+                                    <div class="txt-item txt-cc">
+                                        我们的愿景:
+                                        <div class="txt-item-con">赋能中国“智”造 打造一组值得全球用户信赖的知名品牌。</div>
+                                    </div>
+                                    <div class="txt-item txt-cc">
+                                        我们的价值观:
+                                        <div class="txt-item-con">谦逊践行、求实创新、高效协同、长期主义。</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+            {% include 'footer.html' %}
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+{% endblock %}
+{% block script %}
+    <script>
+        let el = $("#clicks li")
+        el.eq(0).removeClass("active")
+        el.eq(1).removeClass("active")
+        el.eq(2).addClass("active")
+        el.eq(3).removeClass("active")
+        el.eq(4).removeClass("active")
+    </script>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'template.html' %}
+{% block title %}
+
+{% endblock %}
+{% block link-style %}
+    <style>
+    </style>
+{% endblock %}
+{% block main %}
+    {% block content %}
+        <div class="cd-det-wrap">
+            <div class="cd-det wid">
+                <div class="share-box wid">
+
+                    <script>with (window._bd_share_config = {
+                        common: {
+                            bdSnsKey: {},
+                            bdText: "",
+                            bdMini: "2",
+                            bdMiniList: !1,
+                            bdPic: "",
+                            bdStyle: "0",
+                            bdSize: "32",
+                            bdUrl: "",
+                            bdDesc: ''
+                        }, share: {}
+                    }, document) (getElementsByTagName("head")[0] || body).appendChild(createElement("script")).src = "/static/api/js/share.js?v=89860593.js?cdnversion=" + ~(-new Date / 36e5)
+
+                    </script>
+                </div>
+                <header class="det-hd">
+                    <h1 class="det-tit">
+                        {{ new.article_title }} </h1>
+                    <h4 class="sub-tit">
+                        <span class="item">时间：{{ new.show_time|date:'Y/m/d' }}</span>
+                    </h4>
+                </header>
+                <article class="det-txt" style="word-wrap: break-word;">
+                    {{ new.article_desc|safe }}
+                </article>
+                <header class="det-hd">
+                    <h4 class="sub-tit" style="margin-top:-1.2vw">
+                        <span class="item">  </span>
+                    </h4>
+                </header>
+            </div>
+        </div>
+    {% endblock %}
+    {% include 'footer.html' %}
+{% endblock %}
+{% block script %}
+    <script>
+        $('.header').addClass('det-header')
+        $(window).scroll(function () {
+            var e = document.documentElement.scrollTop || document.body.scrollTop;
+            $(".share-box").height() < e ? $(".share-box").addClass("active") : $(".share-box").removeClass("active")
+        })
+        let el = $("#clicks li")
+        el.eq(0).removeClass("active")
+        el.eq(1).removeClass("active")
+        el.eq(2).removeClass("active")
+        el.eq(3).addClass("active")
+        el.eq(4).removeClass("active")
+    </script>
+{% endblock %}

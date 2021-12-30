@@ -1,0 +1,503 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block title %}
+    首页
+{% endblock %}
+{% block link-style %}
+    <style>
+        .paging .pager li .huise {
+            background: #cccccc;
+            color: #000000;
+        }
+
+        .paging .pager li .huise:hover {
+            background: #cccccc;
+            color: #000000;
+        }
+
+
+        .common-titles {
+            color: #fff;
+            z-index: 2
+        }
+
+        .patent-list {
+            text-align: left;
+            width: 300px;
+            margin: 0 0 0 auto;
+            position: relative;
+            top: 100px;
+        }
+
+        .num {
+            font-size: 3.518vw;
+            font-weight: 400;
+            display: inline;
+        }
+
+        .gs {
+            font-size: 0.754vw;
+            font-weight: lighter;
+            display: inline;
+            position: relative;
+            bottom: 36px;
+            right: 1px;
+        }
+
+        .text {
+            font-size: 35px;
+            position: relative;
+            right: 50px;
+        }
+
+        .adds {
+            font-family: Arial, Microsoft YaHei;
+            font-width: bold;
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+
+        .adds .add1 {
+            width: 300px;
+            margin: 0 0 0 auto;
+            position: relative;
+            bottom: 20px;
+            left: 30px;
+        }
+
+        .adds .add2 {
+            width: 150px;
+            margin: 0 auto;
+            position: relative;
+            top: 80px;
+            left: 200px;
+        }
+
+        .adds .add3 {
+
+        }
+
+        .adds .en_add {
+            font-family: Arial, Microsoft YaHei;
+            font-size: 26px;
+            margin-top: 10px;
+
+        }
+
+        .adds .zh_add {
+            font-size: 23px;
+            margin-top: 10px;
+        }
+
+        .adds .tps {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+
+        .info {
+            margin: 0 auto;
+        }
+
+        .info .info-title {
+            font-size: 1.859vw;
+            font-family: Arial, Microsoft YaHei;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .info .info-country {
+            font-size: 1.305vw;
+            font-family: Arial, Microsoft YaHei;
+            text-align: center;
+            margin-top: 27px;
+        }
+
+        .info .info-user-brand {
+            margin-top: 4.171vw;
+        }
+
+        .info .info-user {
+            display: inline;
+            margin-left: 7vw;
+        }
+
+        .info .info-brand {
+            display: inline;
+
+        }
+
+        .info .brand {
+            margin-top: 5vw;
+            text-align: center;
+        }
+
+        .video-info-wrap {
+            padding-bottom: 3.77083vw;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .common-titles {
+                max-width: 100%
+            }
+
+            .patent-list {
+                text-align: left;
+                width: 300px;
+                margin: 0 auto 0 0;
+                position: relative;
+                top: -280px;
+            }
+
+            .num {
+                font-size: 5.390vw;
+                font-weight: 400;
+                display: inline;
+            }
+
+            .txt {
+                font-size: 9px;
+                font-weight: lighter;
+                display: inline;
+                position: relative;
+                bottom: 8px;
+                right: 7px;
+            }
+
+            .text {
+                font-size: 17px;
+                position: relative;
+                right: 10px;
+                top: 10px;
+            }
+
+            .adds {
+                font-family: Arial, Microsoft YaHei;
+                font-width: bold;
+                width: 234.742vw;
+                margin: 0 auto;
+            }
+
+            .adds .add1 {
+                width: 70.423vw;
+                margin: 0 auto;
+                position: relative;
+                bottom: -15.127vw;
+                left: -28.169vw;
+            }
+
+            .adds .add2 {
+                width: 35.211vw;
+                margin: 0 auto;
+                position: relative;
+                top: 35.211vw;
+                left: -51.643vw;
+            }
+
+            .adds .add3 {
+                position: relative;
+                top: 23.474vw;
+            }
+
+            .adds .en_add {
+                font-family: Arial, Microsoft YaHei;
+                font-size: 3.756vw;
+                margin-top: 2.347vw;
+
+            }
+
+            .adds .zh_add {
+                font-size: 3.052vw;
+                margin-top: 2.347vw;
+            }
+
+            .adds .tps {
+                font-size: 1.878vw;
+                margin-top: 2.347vw;
+            }
+
+            .info .info-title {
+                font-size: 3.859vw;
+            }
+
+
+            .info .info-user {
+                display: inline;
+                margin-left: 7vw;
+            }
+
+            .info .info-brand {
+                display: inline;
+
+            }
+
+            .info .brand {
+                margin-top: 9vw;
+                text-align: center;
+            }
+
+            .info .info-country {
+                font-size: 2.305vw;
+                font-family: Arial, Microsoft YaHei;
+                text-align: center;
+                margin-top: 27px;
+            }
+        }
+
+    </style>
+{% endblock %}
+
+
+
+
+{% block main %}
+    <div class="swiper-container fullpage swiper-container-initialized swiper-container-vertical">
+        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+            {% block content %}
+                <div class="swiper-slide swiper-slide-active">
+                    <div class="banner index-banner">
+                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide-active" style="width: 1920px;">
+                                    <a href="javascript:;" style="cursor:default">
+                                        <div style="background-image:url('{% static "images/1920/20211217001_1920.jpg" %}')"
+                                             class="banner-item">
+                                            <div class="comm-bg pc-bg"
+                                                 style="background-image:url('{% static "images/1920/20211217001_1920.jpg" %}')">
+                                            </div>
+                                            <div class="comm-bg mb-bg"
+                                                 style="background-image:url('{% static "images/750/20211217001_750.jpg" %}')">
+                                            </div>
+                                            <div class="common-titles wid">
+                                                <h1 class="tit">
+                                                </h1>
+                                                <h4 class="sub-tit">
+                                                </h4>
+                                            </div>
+                                            <video src="" id="fullscreenvideo" autoplay="" preload="auto" playsinline=""
+                                                   loop="" webkit-playsinline="" x-webkit-airplay="allow"
+                                                   x5-video-player-fullscreen="true" muted=""
+                                                   style="width:100%;"></video>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide swiper-slide-next" style="width: 1920px;">
+                                    <a href="javascript:;" style="cursor:default">
+                                        <div style="background-image:url('{% static "images/1920/20211217002_1920.jpg" %}')"
+                                             class="banner-item">
+                                            <div class="comm-bg pc-bg"
+                                                 style="background-image:url('{% static "images/1920/20211217002_1920.jpg" %}')">
+                                            </div>
+                                            <div class="comm-bg mb-bg"
+                                                 style="background-image:url('{% static "images/750/20211217002_750.jpg" %}')">
+                                            </div>
+                                            <div class="common-titles wid">
+                                                <h1 class="tit">
+                                                </h1>
+                                                <h4 class="sub-tit">
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
+                                class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0"
+                                role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet"
+                                                                                      tabindex="0" role="button"
+                                                                                      aria-label="Go to slide 2"></span><span
+                                class="swiper-pagination-bullet" tabindex="0" role="button"
+                                aria-label="Go to slide 3"></span></div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide-next">
+                    <div class="container">
+                        <div class="comm-bg pc-bg ani-bg"
+                             style="background-image:url('{% static "images/1920/index_image1.gif" %}');z-index: -1">
+                        </div>
+                        <div class="comm-bg mb-bg ani-bg"
+                             style="background-image:url('{% static "images/750/index_image1_750.jpg" %}'); z-index: -1"></div>
+
+
+                        <div class="inre-wrap wid">
+                            <div class="adds" style="color:#ffffff;">
+                                <ul class="add1">
+
+                                    <li class="en_add">JAPAN</li>
+                                    <li class="zh_add">日本.埼玉县</li>
+                                    <li class="tps">SAITAMA PREFECTURE,JAPAN</li>
+                                </ul>
+                                <ul class="add2">
+                                    <li class="en_add">CHINA</li>
+                                    <li class="zh_add">中国.广东深圳</li>
+                                    <li class="tps">SHENZHEN,GUANGDONG,CHINA</li>
+                                </ul>
+                                <ul class="add3">
+                                    <li class="en_add">AMERICA</li>
+                                    <li class="zh_add">美国.加利福尼亚州</li>
+                                    <li class="tps">CALIFORNIA, AMERICA</li>
+                                </ul>
+                            </div>
+                            <div class="common-titles ani" swiper-animate-duration="1s"
+                                 swiper-animate-effect="fadeInDownBig" swiper-animate-style-cache=" "
+                                 style="visibility: hidden;">
+                                <div class="patent-list">
+                                    <ul class="">
+                                        <li>
+                                            <div class="txt gs">研发项目</div>
+                                            <div class="num">325</div>
+
+                                        </li>
+                                        <li>
+                                            <div class="txt gs">研发专利</div>
+                                            <div class="num">85</div>
+
+                                        </li>
+                                        <li>
+                                            <div class="txt gs">数据调研</div>
+                                            <div class="num" style="display: inline">1000</div>
+                                            <span style="font-size: 27px;font-weight: 400;">+</span>
+                                        </li>
+                                        <li>
+                                            <div class="text">
+                                                搭建全球数据中心
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" style="background-color:#000">
+                    <div class="container">
+                        <div class="comm-bg mb-bg"
+                             style="background-image:url({% static 'images/750/index_image2_750.jpg' %})">
+                        </div>
+                        <div class="comm-video-bg"
+                             style="background-image:url({% static 'images/1920/index_image3.jpg' %})">
+                        </div>
+                        <div class="comm-video brand-video"
+                             style="background-image: url('{% static 'images/1920/index_image2.gif' %}')">
+                        </div>
+                        <div class="video-info-wrap ani wid" swiper-animate-effect="fadeIn"
+                             swiper-animate-duration="0.5s" swiper-animate-style-cache=" " style="visibility: hidden;">
+                            <div class="info ">
+                                <div class="info-title">
+                                    通过AMAZON等平台主营多个国家市场
+                                </div>
+
+                                <div class="info-country">
+                                    美国、英国、德国、法国、意大利、西班牙、日本、澳大利亚、东南亚等地区
+                                </div>
+                                <ul class="num-box brand">
+                                    <li class="info-brand">
+                                        <div class="num-txt gs">品牌粉丝
+                                            <div class="num">100000</div>
+                                            <span style="font-size: 27px;font-weight: 400;">+</span>
+                                        </div>
+                                    </li>
+                                    <li class="info-user">
+                                        <div class="num-txt gs">累计用户
+                                            <div class="num">3600000</div>
+                                            <span style="font-size: 27px;font-weight: 400;">+</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="comm-bg pc-bg"
+                             style="background-image:url({% static 'images/1920/index_image3.jpg' %})"></div>
+                        <div class="comm-bg mb-bg"
+                             style="background-image:url({% static 'images/750/index_image3_750.jpg' %})">
+                        </div>
+                        <div class="index-news-wrap wid">
+                            <div class="swiper-container ani swiper-container-initialized swiper-container-horizontal"
+                                 swiper-animate-duration="0.5s" swiper-animate-effect="fadeInUp"
+                                 swiper-animate-style-cache="" style="visibility: hidden;">
+                                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                                    {% for new in news %}
+                                        <div class="swiper-slide {% if forloop.counter0 == 0 %}
+                                            swiper-slide-active
+                                         {% elif forloop.counter0 == 1 %}
+                                            swiper-slide-next
+                                        {% endif %} "
+                                             style="width: 400px; margin-right: 60px;">
+                                            <div class="news-box">
+                                                <div class="img">
+                                                    <a href="/news/art/{{ new.pk }}"><img alt=""
+                                                                                          src="/media/{{ new.article_img }}"></a>
+                                                </div>
+                                                <div class="con">
+                                                    <div class="tit">
+                                                        <a href="/news/art/{{ new.pk }}">{{ new.article_title }}</a>
+                                                    </div>
+                                                    <article class="txt"
+                                                             style='font-family: "Microsoft Yahei", Arial, sans-serif;'>
+                                                        <a href="/news/art/{{ new.pk }}">{{ new.article_info }}</a>
+                                                    </article>
+                                                    <div class="time">
+                                                        {{ new.shwo_time|date:'Y.m.d' }}
+                                                    </div>
+                                                    <footer class="ft-more">
+                                                        <div class="from">
+                                                            <div class="ly">
+                                                                <i class="iconfont icon-sanx-up"></i> From
+                                                            </div>
+                                                            {{ new.article_type }}
+                                                        </div>
+                                                        <a class="more" href="/news/{{ new.article_type_id }}">
+                                                            更多
+                                                        </a>
+                                                    </footer>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                                <span clanss="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                            </div>
+                            <div class="swiper-btn swiper-button-prev swiper-button-disabled" tabindex="0" role="button"
+                                 aria-label="Previous slide" aria-disabled="true" style="display: none;">
+                                <i class="iconfont icon-iconfontzuojiantou"></i>
+                            </div>
+                            <div class="swiper-btn swiper-button-next swiper-button-disabled" tabindex="0" role="button"
+                                 aria-label="Next slide" aria-disabled="true" style="display: none;">
+                                <i class="iconfont icon-iconfontyoujiantou"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+            {% include 'footer.html' %}
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+{% endblock %}
+{% block script %}
+    <script>
+        let el = $("#clicks li")
+        el.eq(0).addClass("active")
+        el.eq(1).removeClass("active")
+        el.eq(2).removeClass("active")
+        el.eq(3).removeClass("active")
+        el.eq(4).removeClass("active")
+    </script>
+{% endblock %}

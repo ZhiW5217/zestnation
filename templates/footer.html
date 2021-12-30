@@ -1,0 +1,233 @@
+{% load static %}
+<style>
+    .top-con {
+        border-top: 1px solid rgba(209, 209, 209, .5);
+        padding-top: 112px;
+        padding-bottom: 20px
+    }
+
+    .lt {
+        margin-left: 70px;
+    }
+
+    .bt-con {
+        margin-bottom: 70px;
+        margin-left: 303px;
+    }
+
+    .lt-logo {
+        height: 36px;
+        width: 339px;
+        background-image: url({% static 'images/1920/btn_logo.png' %});
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .bt-text {
+        font-size: 1.1vw;
+        font-family: "Microsoft YaHei", Arial, Sans-Serif;
+        padding-right: 113px;
+    }
+
+    .bt-text-s {
+        padding-bottom: 20px;
+        color: #424242;
+        font-weight: 400;
+        letter-spacing: 2px;
+        padding-top: 5px;
+    }
+
+
+    .rt img {
+        width: 100%;
+        height: 124px;
+    }
+
+    .rt span {
+        display: block;
+        margin-left: 36px;
+    }
+
+    .rt .tal {
+        font-family: "Microsoft YaHei", Arial, Sans-Serif;
+        font-size: 1vw;
+        margin-top: 12px;
+        color: #2E2E2E;
+    }
+
+    .rt .add {
+        display: block;
+        font-size: 0.7vw;
+        font-family: FZLTHK;
+        margin-top: 30px;
+
+    }
+
+    .tal_add {
+        float: right;
+        max-width: 200px;
+        display: inline;
+        margin-top: 5px;
+        margin-left: 1vw;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .pg-footer .top-con .rt .work-time p:first-child::before {
+            content: '';
+            padding: 0;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .map {
+            display: none !important;
+        }
+
+        .add {
+            display: none !important;
+        }
+
+        .tal_add {
+            float: left;
+        }
+
+        .rt .tal {
+            margin: 5px auto auto 15px !important;
+            font-size: 3vw;
+        }
+
+        .lt {
+            margin-left: 20px;
+        }
+
+        .rt .tal:before {
+            content: "电话：";
+        }
+
+        .pg-footer .top-con {
+            padding-top: 20px;
+            height: 100px;
+        }
+
+        #brand {
+            margin: 10px 10px 0 0;
+            width: auto;
+        }
+
+        #bt-con {
+            margin: auto auto 20px 20px;
+        }
+
+        .bt-text {
+            font-size: 1.6vw;
+            padding-right: 10px;
+        }
+
+        .lt-logo {
+            width: 150px;
+        }
+
+        .bt-text-s {
+            padding-top: 1px;
+            padding-bottom: 10px;
+            color: #424242;
+            font-weight: 400;
+            letter-spacing: 0.3vw;
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+
+    }
+</style>
+<div class="swiper-slide footer-slide">
+    <div class="mask"></div>
+    <footer class="pg-footer">
+        <div class="ft-top" style="padding: 70px 0;background-image: url('{% static "images/ft_bg1.jpg" %}')">
+            <div id="bt-con" class="bt-con wid">
+                <div class="lt-logo"
+                     style="">
+                    <span class="txt"></span>
+                </div>
+                <!-- 右边文字 -->
+                <div class="bt-text" style="text-align: right">
+                    <div class="bt-text-s">持续为全球用户提供“WOW”的产品和服务</div>
+
+                    <div class="bt-text-s">赋能中国“智”造，打造一组值得全球用户信赖的知名品牌</div>
+                </div>
+            </div>
+
+            <div class="top-con wid clearfix">
+                <div class="lt">
+                    <dl>
+                        <dt id="brand">旗下品牌</dt>
+                        {% for brand in brand_types %}
+                            <dd>
+                                <a href="/brand/{{ brand.pk }}"><img alt=""
+                                                                     src="/media/{{ brand.brand_logo }}"></a>
+                            </dd>
+                        {% endfor %}
+                    </dl>
+                    <dl>
+
+                        <dt>了解沁泽</dt>
+                        <dd>
+                            <a href="#">发展历程</a>
+                        </dd>
+                        <dd>
+                            <a href="#">企业文化</a>
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>新闻资讯</dt>
+                        {% for new_type in new_types %}
+                            <dd>
+                                <a href="/news/{{ new_type.pk }}">{{ new_type.type_name }}</a>
+                            </dd>
+                        {% endfor %}
+                    </dl>
+                    <dl>
+                        <dt>加入沁泽</dt>
+                        <dd>
+                            <a target="_blank" href="https://jobs.51job.com/all/co4149597.html">社会招聘</a>
+                        </dd>
+                    </dl>
+                    <dl style="margin-right: 0">
+                        <dt>品牌官网</dt>
+                        <dd>
+                            <a target="_blank" href="https://www.handife.com/">Handife</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" href="https://elecife.com/">Elecife</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="rt">
+                    <div style="">
+                        <div class="map" style="display: inline-block; max-width: 192px">
+                            <a target="_blank"
+                               href="https://map.baidu.com/search/沁泽通达科技有限公司/@12674596.605,2564768.5,19z?querytype=s&da_src=shareurl&wd=沁泽通达科技有限公司&c=340&src=0&pn=0&sug=0&l=15&b=(12669599.742362242,2562951.83868021;12679293.837968864,2567874.621605447)&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D&device_ratio=1">
+                                <img src="{% static 'images/1920/btn-map.png' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="tal_add">
+                            <div class="tal">0755-27206285</div>
+                            <div class="add">
+                                <h4>公司地址：</h4>
+                                深圳市宝安区西乡街道兴业路3012号老兵大事西三座二楼整层
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</div>
+
+
+
