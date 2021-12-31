@@ -21,13 +21,13 @@
         background-image: url({% static 'images/1920/btn_logo.png' %});
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: center;
+
     }
 
     .bt-text {
         font-size: 1.1vw;
         font-family: "Microsoft YaHei", Arial, Sans-Serif;
-        padding-right: 113px;
+        padding-right: 60px;
     }
 
     .bt-text-s {
@@ -72,6 +72,9 @@
         margin-left: 1vw;
     }
 
+    .dtt {
+        margin-left: 12px;
+    }
 
     @media screen and (max-width: 768px) {
         .pg-footer .top-con .rt .work-time p:first-child::before {
@@ -172,7 +175,7 @@
                     </dl>
                     <dl>
 
-                        <dt>了解沁泽</dt>
+                        <dt class="dtt">了解沁泽</dt>
                         <dd>
                             <a href="#">发展历程</a>
                         </dd>
@@ -182,7 +185,7 @@
                     </dl>
 
                     <dl>
-                        <dt>新闻资讯</dt>
+                        <dt class="dtt">新闻资讯</dt>
                         {% for new_type in new_types %}
                             <dd>
                                 <a href="/news/{{ new_type.pk }}">{{ new_type.type_name }}</a>
@@ -190,13 +193,13 @@
                         {% endfor %}
                     </dl>
                     <dl>
-                        <dt>加入沁泽</dt>
+                        <dt class="dtt">加入沁泽</dt>
                         <dd>
                             <a target="_blank" href="https://jobs.51job.com/all/co4149597.html">社会招聘</a>
                         </dd>
                     </dl>
                     <dl style="margin-right: 0">
-                        <dt>品牌官网</dt>
+                        <dt class="dtt">品牌官网</dt>
                         <dd>
                             <a target="_blank" href="https://www.handife.com/">Handife</a>
                         </dd>

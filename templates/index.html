@@ -449,8 +449,9 @@
                                                         <a href="/news/art/{{ new.pk }}">{{ new.article_title }}</a>
                                                     </div>
                                                     <article class="txt"
-                                                             style='font-family: "Microsoft Yahei", Arial, sans-serif;'>
-                                                        <a href="/news/art/{{ new.pk }}">{{ new.article_info }}</a>
+                                                             style='font-family: "Microsoft Yahei", Arial, sans-serif;  '>
+                                                        <a style="color: rgba(83,82,82,0.65); font-size: 15px; line-height: 30px"
+                                                           href="/news/art/{{ new.pk }}">{{ new.article_info }}</a>
                                                     </article>
                                                     <div class="time">
                                                         {{ new.shwo_time|date:'Y.m.d' }}
